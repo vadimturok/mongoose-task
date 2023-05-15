@@ -1,0 +1,975 @@
+{
+	"info": {
+		"_postman_id": "fe5cc308-9d9e-4e3b-87f9-2a14295f9d57",
+		"name": "Mongoose-Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14495830"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Vadim\",\r\n    \"lastName\": \"Turok\",\r\n    \"age\": 19,\r\n    \"email\": \"test@example.com\",\r\n    \"role\": \"writer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 25,\r\n    \"email\": \"john@example.com\",\r\n    \"role\": \"writer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "284"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11c-9xQmVJfEomIk7UawrTFeJ+vbUrs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:00:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"role\": \"writer\",\n    \"age\": 25,\n    \"numberOfArticles\": 0,\n    \"articles\": [],\n    \"likedArticles\": [],\n    \"_id\": \"64626532174f6210a507c892\",\n    \"createdAt\": \"2023-05-15T17:00:34.883Z\",\n    \"updatedAt\": \"2023-05-15T17:00:34.883Z\",\n    \"fullName\": \"John Doe\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get users sort by age",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users?age=-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get users sort by age",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users?age=-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-aitnfGyKLN9yBRykezSIWfKL88w\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:01:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"64626532174f6210a507c892\",\n        \"email\": \"john@example.com\",\n        \"age\": 25,\n        \"fullName\": \"John Doe\"\n    },\n    {\n        \"_id\": \"6462648c174f6210a507c88f\",\n        \"email\": \"test@example.com\",\n        \"age\": 19,\n        \"fullName\": \"Vadim Turok\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test title 2\",\r\n    \"subtitle\": \"Subtitle test 2\",\r\n    \"description\": \"this is some content\",\r\n    \"owner\": \"64626532174f6210a507c892\",\r\n    \"category\": \"games\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create article",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test title 2\",\r\n    \"subtitle\": \"Subtitle test 2\",\r\n    \"description\": \"this is some content\",\r\n    \"owner\": \"64626532174f6210a507c892\",\r\n    \"category\": \"games\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"112-fHOmZpLrq2s+C64cZlMgiSwhzMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:04:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Test title 2\",\n    \"subtitle\": \"Subtitle test 2\",\n    \"description\": \"this is some content\",\n    \"owner\": \"64626532174f6210a507c892\",\n    \"likes\": [],\n    \"category\": \"games\",\n    \"_id\": \"64626601174f6210a507c89b\",\n    \"createdAt\": \"2023-05-15T17:04:01.158Z\",\n    \"updatedAt\": \"2023-05-15T17:04:01.158Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user by id with articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/64626532174f6210a507c892",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"64626532174f6210a507c892"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user by id with articles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/64626532174f6210a507c892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"64626532174f6210a507c892"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "465"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d1-vmLDhCR+KYD0kYKKLY5hTS+JxjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:05:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64626532174f6210a507c892\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"role\": \"writer\",\n    \"age\": 25,\n    \"numberOfArticles\": 2,\n    \"articles\": [\n        {\n            \"title\": \"Test title\",\n            \"subtitle\": \"Subtitle test\",\n            \"createdAt\": \"2023-05-15T17:02:45.296Z\"\n        },\n        {\n            \"title\": \"Test title 2\",\n            \"subtitle\": \"Subtitle test 2\",\n            \"createdAt\": \"2023-05-15T17:04:01.158Z\"\n        }\n    ],\n    \"likedArticles\": [],\n    \"createdAt\": \"2023-05-15T17:00:34.883Z\",\n    \"updatedAt\": \"2023-05-15T17:04:01.280Z\",\n    \"fullName\": \"John Doe\",\n    \"__v\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit user by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"John EDITED\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 29\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/64626532174f6210a507c892",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"64626532174f6210a507c892"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit user by id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John EDITED\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 29\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/64626532174f6210a507c892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"64626532174f6210a507c892"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "351"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15f-zEZ981TtzQVtcx67jqw97XHyL6w\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:07:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64626532174f6210a507c892\",\n    \"firstName\": \"John EDITED\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"role\": \"writer\",\n    \"age\": 29,\n    \"numberOfArticles\": 2,\n    \"articles\": [\n        \"646265b5174f6210a507c897\",\n        \"64626601174f6210a507c89b\"\n    ],\n    \"likedArticles\": [],\n    \"createdAt\": \"2023-05-15T17:00:34.883Z\",\n    \"updatedAt\": \"2023-05-15T17:07:14.050Z\",\n    \"fullName\": \"John EDITED Doe\",\n    \"__v\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/6462648c174f6210a507c88f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"6462648c174f6210a507c88f"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete user by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/6462648c174f6210a507c88f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6462648c174f6210a507c88f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"122-H4O2cpZyw3hZS7cwIiFdrB9jdtM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:08:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6462648c174f6210a507c88f\",\n    \"firstName\": \"Vadim\",\n    \"lastName\": \"Turok\",\n    \"email\": \"test@example.com\",\n    \"role\": \"writer\",\n    \"age\": 19,\n    \"numberOfArticles\": 0,\n    \"articles\": [],\n    \"likedArticles\": [],\n    \"createdAt\": \"2023-05-15T16:57:48.554Z\",\n    \"updatedAt\": \"2023-05-15T16:57:48.554Z\",\n    \"fullName\": \"Vadim Turok\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit article by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Edited title\",\r\n    \"subtitle\": \"Edited subtitle\",\r\n    \"owner\": \"64626532174f6210a507c892\",\r\n    \"description\": \"this is edited description\",\r\n    \"category\": \"games\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles/64626601174f6210a507c89b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"64626601174f6210a507c89b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit article by id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Edited title\",\r\n    \"subtitle\": \"Edited subtitle\",\r\n    \"owner\": \"64626532174f6210a507c892\",\r\n    \"description\": \"this is edited description\",\r\n    \"category\": \"games\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles/64626601174f6210a507c89b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"64626601174f6210a507c89b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "280"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"118-dBGfCCcPKdWQQAFKJ+EnmFF7dyw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:10:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64626601174f6210a507c89b\",\n    \"title\": \"Edited title\",\n    \"subtitle\": \"Edited subtitle\",\n    \"description\": \"this is edited description\",\n    \"owner\": \"64626532174f6210a507c892\",\n    \"likes\": [],\n    \"category\": \"games\",\n    \"createdAt\": \"2023-05-15T17:04:01.158Z\",\n    \"updatedAt\": \"2023-05-15T17:10:27.979Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get articles by title with pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles?title=Edited title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Edited title"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get articles by title with pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles?title=Edited title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Edited title"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16e-npvqbRNYaJTrMgMHYyqzcTXLxJ4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:11:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"articles\": [\n        {\n            \"_id\": \"64626601174f6210a507c89b\",\n            \"title\": \"Edited title\",\n            \"subtitle\": \"Edited subtitle\",\n            \"description\": \"this is edited description\",\n            \"owner\": {\n                \"email\": \"john@example.com\",\n                \"age\": 29,\n                \"fullName\": \"John EDITED Doe\"\n            },\n            \"likes\": [],\n            \"category\": \"games\",\n            \"createdAt\": \"2023-05-15T17:04:01.158Z\",\n            \"updatedAt\": \"2023-05-15T17:10:27.979Z\",\n            \"__v\": 0\n        }\n    ],\n    \"totalPages\": 1,\n    \"currentPage\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete article by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles/64626601174f6210a507c89b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"64626601174f6210a507c89b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete article by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles/64626601174f6210a507c89b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"64626601174f6210a507c89b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "280"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"118-dBGfCCcPKdWQQAFKJ+EnmFF7dyw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:12:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64626601174f6210a507c89b\",\n    \"title\": \"Edited title\",\n    \"subtitle\": \"Edited subtitle\",\n    \"description\": \"this is edited description\",\n    \"owner\": \"64626532174f6210a507c892\",\n    \"likes\": [],\n    \"category\": \"games\",\n    \"createdAt\": \"2023-05-15T17:04:01.158Z\",\n    \"updatedAt\": \"2023-05-15T17:10:27.979Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Like article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles/like/646265b5174f6210a507c897/64626532174f6210a507c892",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"like",
+						"646265b5174f6210a507c897",
+						"64626532174f6210a507c892"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Like article",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles/like/646265b5174f6210a507c897/64626532174f6210a507c892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"like",
+								"646265b5174f6210a507c897",
+								"64626532174f6210a507c892"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"128-4XsygCzLnTQ5uPyaPu6hY1GbsF4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:14:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"646265b5174f6210a507c897\",\n    \"title\": \"Test title\",\n    \"subtitle\": \"Subtitle test\",\n    \"description\": \"this is some content\",\n    \"owner\": \"64626532174f6210a507c892\",\n    \"likes\": [\n        \"64626532174f6210a507c892\"\n    ],\n    \"category\": \"games\",\n    \"createdAt\": \"2023-05-15T17:02:45.296Z\",\n    \"updatedAt\": \"2023-05-15T17:14:03.832Z\",\n    \"__v\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Unlike article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/articles/like/646265b5174f6210a507c897/64626532174f6210a507c892",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"like",
+						"646265b5174f6210a507c897",
+						"64626532174f6210a507c892"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unlike article",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/articles/like/646265b5174f6210a507c897/64626532174f6210a507c892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"like",
+								"646265b5174f6210a507c897",
+								"64626532174f6210a507c892"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10e-s5SRsZtui6FzgypN5UJgkZtsN5o\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 May 2023 17:15:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"646265b5174f6210a507c897\",\n    \"title\": \"Test title\",\n    \"subtitle\": \"Subtitle test\",\n    \"description\": \"this is some content\",\n    \"owner\": \"64626532174f6210a507c892\",\n    \"likes\": [],\n    \"category\": \"games\",\n    \"createdAt\": \"2023-05-15T17:02:45.296Z\",\n    \"updatedAt\": \"2023-05-15T17:15:52.839Z\",\n    \"__v\": 2\n}"
+				}
+			]
+		}
+	]
+}
